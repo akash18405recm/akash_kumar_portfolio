@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,51 +8,53 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@600;700;800&display=swap');
-        
+
         * {
             font-family: 'Inter', sans-serif;
         }
-        
-        h1, h2, h3 {
+
+        h1,
+        h2,
+        h3 {
             font-family: 'Poppins', sans-serif;
         }
-        
+
         .gradient-bg {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
-        
+
         .gradient-bg-2 {
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
         }
-        
+
         .gradient-bg-3 {
             background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
         }
-        
+
         .gradient-bg-4 {
             background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
         }
-        
+
         .gradient-text {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .gradient-text-2 {
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .card-hover {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
         }
-        
+
         .card-hover::before {
             content: '';
             position: absolute;
@@ -59,53 +62,57 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
             transition: left 0.5s;
         }
-        
+
         .card-hover:hover::before {
             left: 100%;
         }
-        
+
         .card-hover:hover {
             transform: translateY(-12px) scale(1.02);
             box-shadow: 0 25px 50px rgba(102, 126, 234, 0.25);
         }
-        
+
         .section-fade {
             animation: fadeInUp 0.8s ease-out;
         }
-        
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(40px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
+
         @keyframes float {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0px);
             }
+
             50% {
                 transform: translateY(-20px);
             }
         }
-        
+
         .float-animation {
             animation: float 6s ease-in-out infinite;
         }
-        
+
         .skill-badge {
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
-        
+
         .skill-badge::after {
             content: '';
             position: absolute;
@@ -118,12 +125,12 @@
             transform: translate(-50%, -50%);
             transition: width 0.3s, height 0.3s;
         }
-        
+
         .skill-badge:hover::after {
             width: 200%;
             height: 200%;
         }
-        
+
         .skill-badge:hover {
             transform: scale(1.1) rotate(2deg);
             box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
@@ -143,7 +150,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .project-image::before {
             content: '';
             position: absolute;
@@ -151,20 +158,20 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
             transform: rotate(45deg);
             transition: all 0.5s;
         }
-        
+
         .card-hover:hover .project-image::before {
             left: 100%;
         }
-        
+
         .stat-card {
             position: relative;
             overflow: hidden;
         }
-        
+
         .stat-card::before {
             content: '';
             position: absolute;
@@ -172,14 +179,14 @@
             right: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
             transition: transform 0.5s;
         }
-        
+
         .stat-card:hover::before {
             transform: translate(25%, 25%);
         }
-        
+
         .blob {
             position: absolute;
             border-radius: 50%;
@@ -187,24 +194,28 @@
             opacity: 0.3;
             animation: blobMove 20s infinite alternate;
         }
-        
+
         @keyframes blobMove {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translate(0, 0) scale(1);
             }
+
             33% {
                 transform: translate(30px, -50px) scale(1.1);
             }
+
             66% {
                 transform: translate(-20px, 20px) scale(0.9);
             }
         }
-        
+
         .section-header {
             position: relative;
             display: inline-block;
         }
-        
+
         .section-header::after {
             content: '';
             position: absolute;
@@ -216,7 +227,7 @@
             background: linear-gradient(90deg, transparent, #667eea, transparent);
             border-radius: 2px;
         }
-        
+
         .timeline-dot {
             width: 12px;
             height: 12px;
@@ -227,27 +238,27 @@
             top: 8px;
             box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
         }
-        
+
         .achievement-badge {
             transition: all 0.4s ease;
             position: relative;
         }
-        
+
         .achievement-badge:hover {
             transform: perspective(1000px) rotateY(10deg);
         }
-        
+
         .glowing-border {
             position: relative;
             background: linear-gradient(white, white) padding-box,
-                        linear-gradient(135deg, #667eea, #764ba2) border-box;
+                linear-gradient(135deg, #667eea, #764ba2) border-box;
             border: 2px solid transparent;
         }
-        
+
         .profile-glow {
             position: relative;
         }
-        
+
         .profile-glow::before {
             content: '';
             position: absolute;
@@ -258,16 +269,17 @@
             filter: blur(20px);
             animation: rotate 3s linear infinite;
         }
-        
+
         @keyframes rotate {
             0% {
                 transform: rotate(0deg);
             }
+
             100% {
                 transform: rotate(360deg);
             }
         }
-        
+
         .experience-bar {
             height: 6px;
             background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
@@ -275,7 +287,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .experience-bar::after {
             content: '';
             position: absolute;
@@ -283,14 +295,15 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
             animation: shimmer 2s infinite;
         }
-        
+
         @keyframes shimmer {
             0% {
                 left: -100%;
             }
+
             100% {
                 left: 100%;
             }
@@ -325,8 +338,9 @@
         }
     </style>
 </head>
+
 <body class="bg-gradient-to-br from-gray-50 via-white to-purple-50">
-    
+
     <!-- Scroll Progress Indicator -->
     <div class="scroll-indicator" id="scrollIndicator"></div>
 
@@ -338,23 +352,32 @@
                 <div class="hidden md:flex space-x-8">
                     <a href="#home" class="text-gray-700 hover:text-purple-600 transition font-medium relative group">
                         Home
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full"></span>
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full"></span>
                     </a>
-                    <a href="#endureair" class="text-gray-700 hover:text-purple-600 transition font-medium relative group">
+                    <a href="#endureair"
+                        class="text-gray-700 hover:text-purple-600 transition font-medium relative group">
                         EndureAir
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full"></span>
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full"></span>
                     </a>
-                    <a href="#bharataero" class="text-gray-700 hover:text-purple-600 transition font-medium relative group">
+                    <a href="#bharataero"
+                        class="text-gray-700 hover:text-purple-600 transition font-medium relative group">
                         Bharat Aero
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full"></span>
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full"></span>
                     </a>
-                    <a href="#college" class="text-gray-700 hover:text-purple-600 transition font-medium relative group">
+                    <a href="#college"
+                        class="text-gray-700 hover:text-purple-600 transition font-medium relative group">
                         College Work
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full"></span>
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full"></span>
                     </a>
-                    <a href="#achievements" class="text-gray-700 hover:text-purple-600 transition font-medium relative group">
+                    <a href="#achievements"
+                        class="text-gray-700 hover:text-purple-600 transition font-medium relative group">
                         Achievements
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full"></span>
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full"></span>
                     </a>
                 </div>
             </div>
@@ -374,7 +397,8 @@
             <div class="grid md:grid-cols-2 gap-16 items-center">
                 <div class="section-fade">
                     <div class="inline-block mb-4">
-                        <span class="px-4 py-2 bg-gradient-to-r from-purple-100 to-blue-100 text-purple-700 rounded-full text-sm font-semibold">
+                        <span
+                            class="px-4 py-2 bg-gradient-to-r from-purple-100 to-blue-100 text-purple-700 rounded-full text-sm font-semibold">
                             ✨ Available for Opportunities
                         </span>
                     </div>
@@ -385,53 +409,74 @@
                         <div class="experience-bar w-32"></div>
                         <h2 class="text-2xl md:text-3xl text-gray-600 font-semibold">Mechanical Design Engineer</h2>
                     </div>
-                    
-                    <div class="space-y-4 text-lg text-gray-700 leading-relaxed">
+
+                    <!-- Replace this block in your Hero Section -->
+                    <div class="space-y-4 text-base md:text-lg text-gray-700 leading-relaxed">
                         <p class="border-l-4 border-purple-500 pl-4">
-                            I am a Mechanical Design Engineer with over <span class="font-bold text-purple-600">3.5 years</span> of specialized experience in UAV design and development. My expertise spans the complete mechanical design lifecycle — from initial concept generation and advanced 3D modeling to precision drafting, rigorous structural validation, prototyping, and comprehensive testing protocols.
+                            I am a Mechanical Design Engineer with over <span class="font-bold text-purple-600">3.5
+                                years</span> of specialized experience in UAV design and development. My expertise spans
+                            the complete mechanical design lifecycle — from initial concept generation and advanced 3D
+                            modeling to precision drafting, rigorous structural validation, prototyping, and
+                            comprehensive testing protocols.
                         </p>
                         <p>
-                            Throughout my career, I have led the design and development of mission-critical subsystems including helicopter rotor assemblies, sophisticated control mechanisms, landing gear systems, and advanced composite structures for various UAV platforms.
+                            Throughout my career, I have led the design and development of mission-critical subsystems
+                            including helicopter rotor assemblies, sophisticated control mechanisms, landing gear
+                            systems, and advanced composite structures for various UAV platforms.
                         </p>
-                        <p class="bg-gradient-to-r from-purple-50 to-blue-50 p-4 rounded-lg border-l-4 border-purple-500">
-                            My design philosophy integrates <span class="font-semibold text-purple-700">analytical rigor</span> with practical engineering solutions, fostering efficient collaboration across multidisciplinary teams. I am deeply passionate about advancing UAV technology and continuously refining design methodologies to create lightweight, robust, and cost-effective aerospace systems.
+                        <p
+                            class="bg-gradient-to-r from-purple-50 to-blue-50 p-4 rounded-lg border-l-4 border-purple-500">
+                            My design philosophy integrates <span class="font-semibold text-purple-700">analytical
+                                rigor</span> with practical engineering solutions, fostering efficient collaboration
+                            across multidisciplinary teams. I am deeply passionate about advancing UAV technology and
+                            continuously refining design methodologies to create lightweight, robust, and cost-effective
+                            aerospace systems.
                         </p>
                     </div>
-                    
+
                     <div class="flex flex-wrap gap-4 mt-8">
-                        <a href="mailto:akash18405recmainpuri@gmail.com" class="px-8 py-4 gradient-bg text-white rounded-xl hover:shadow-2xl transition transform hover:scale-105 font-semibold">
+                        <a href="mailto:akash18405recmainpuri@gmail.com"
+                            class="px-8 py-4 gradient-bg text-white rounded-xl hover:shadow-2xl transition transform hover:scale-105 font-semibold">
                             Get in Touch
                         </a>
-                        <a href="https://www.linkedin.com/in/akash-kumar-patel-5812831b1/" target="_blank" class="px-8 py-4 border-2 border-purple-600 text-purple-600 rounded-xl hover:bg-purple-600 hover:text-white transition transform hover:scale-105 font-semibold">
+                        <a href="https://www.linkedin.com/in/akash-kumar-patel-5812831b1/" target="_blank"
+                            class="px-8 py-4 border-2 border-purple-600 text-purple-600 rounded-xl hover:bg-purple-600 hover:text-white transition transform hover:scale-105 font-semibold">
                             LinkedIn Profile
                         </a>
                     </div>
-                    
+
                     <div class="flex flex-wrap items-center gap-6 mt-8 text-gray-600">
-                        <div class="flex items-center gap-3 bg-white px-4 py-3 rounded-lg shadow-md hover:shadow-lg transition">
+                        <div
+                            class="flex items-center gap-3 bg-white px-4 py-3 rounded-lg shadow-md hover:shadow-lg transition">
                             <svg class="w-5 h-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                             </svg>
                             <span class="text-sm font-medium">akash18405recmainpuri@gmail.com</span>
                         </div>
-                        <div class="flex items-center gap-3 bg-white px-4 py-3 rounded-lg shadow-md hover:shadow-lg transition">
+                        <div
+                            class="flex items-center gap-3 bg-white px-4 py-3 rounded-lg shadow-md hover:shadow-lg transition">
                             <svg class="w-5 h-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                                <path
+                                    d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                             </svg>
                             <span class="text-sm font-medium">+91-6387702933</span>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="section-fade flex justify-center" style="animation-delay: 0.2s;">
                     <div class="relative float-animation">
                         <div class="profile-glow">
-                            <img src="https://github.com/user-attachments/assets/08160464-3b28-4062-8888-8ed4eb811d30" alt="Akash Kumar Patel" class="w-96 h-96 rounded-3xl object-cover shadow-2xl relative z-10 border-4 border-white">
+                            <img src="https://github.com/user-attachments/assets/08160464-3b28-4062-8888-8ed4eb811d30"
+                                alt="Akash Kumar Patel"
+                                class="w-96 h-96 rounded-3xl object-cover shadow-2xl relative z-10 border-4 border-white">
                         </div>
                         <!-- Decorative Elements -->
-                        <div class="absolute -top-6 -right-6 w-24 h-24 bg-purple-500 rounded-full opacity-20 blur-2xl"></div>
-                        <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-blue-500 rounded-full opacity-20 blur-2xl"></div>
+                        <div class="absolute -top-6 -right-6 w-24 h-24 bg-purple-500 rounded-full opacity-20 blur-2xl">
+                        </div>
+                        <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-blue-500 rounded-full opacity-20 blur-2xl">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -480,7 +525,7 @@
     <!-- EndureAir Section -->
     <section id="endureair" class="py-20 bg-white px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div class="absolute top-0 right-0 w-96 h-96 bg-purple-200 rounded-full opacity-20 blur-3xl"></div>
-        
+
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="text-center mb-16">
                 <div class="inline-block mb-4">
@@ -493,20 +538,24 @@
                 </h2>
                 <p class="text-gray-600 text-xl">Noida, India</p>
                 <div class="max-w-3xl mx-auto mt-6">
-                    <p class="text-gray-700 text-lg leading-relaxed">Leading mechanical design for advanced VTOL UAV systems with focus on rotor assemblies, structural optimization, and thermal management</p>
+                    <p class="text-gray-700 text-lg leading-relaxed">Leading mechanical design for advanced VTOL UAV
+                        systems with focus on rotor assemblies, structural optimization, and thermal management</p>
                 </div>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Tri-Blade Heli-Quad -->
-                <div class="card-hover bg-gradient-to-br from-white to-purple-50 rounded-2xl overflow-hidden shadow-xl border border-purple-100">
+                <div
+                    class="card-hover bg-gradient-to-br from-white to-purple-50 rounded-2xl overflow-hidden shadow-xl border border-purple-100">
                     <div class="project-image h-56">
-                        <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=300&fit=crop" alt="Tri-Blade Helicopter" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=300&fit=crop"
+                            alt="Tri-Blade Helicopter" class="w-full h-full object-cover">
                     </div>
                     <div class="p-8">
                         <div class="flex items-center gap-2 mb-3">
                             <span class="px-3 py-1 bg-pink-500 text-white rounded-full text-xs font-bold">PAYLOAD</span>
-                            <span class="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-xs font-semibold">130 KG MTOW</span>
+                            <span class="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-xs font-semibold">130 KG
+                                MTOW</span>
                         </div>
                         <h3 class="text-2xl font-bold text-gray-900 mb-3">Heli-Quad Platform</h3>
                         <ul class="text-gray-700 space-y-3 text-sm">
@@ -531,14 +580,18 @@
                 </div>
 
                 <!-- Tandem UAV -->
-                <div class="card-hover bg-gradient-to-br from-white to-yellow-50 rounded-2xl overflow-hidden shadow-xl border border-yellow-100">
+                <div
+                    class="card-hover bg-gradient-to-br from-white to-yellow-50 rounded-2xl overflow-hidden shadow-xl border border-yellow-100">
                     <div class="project-image h-56">
-                        <img src="https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=400&h=300&fit=crop" alt="Tandem UAV" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=400&h=300&fit=crop"
+                            alt="Tandem UAV" class="w-full h-full object-cover">
                     </div>
                     <div class="p-8">
                         <div class="flex items-center gap-2 mb-3">
-                            <span class="px-3 py-1 bg-yellow-500 text-white rounded-full text-xs font-bold">TANDEM</span>
-                            <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">56 KG MTOW</span>
+                            <span
+                                class="px-3 py-1 bg-yellow-500 text-white rounded-full text-xs font-bold">TANDEM</span>
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">56
+                                KG MTOW</span>
                         </div>
                         <h3 class="text-2xl font-bold text-gray-900 mb-3">Tandem UAV System</h3>
                         <ul class="text-gray-700 space-y-3 text-sm">
@@ -563,9 +616,11 @@
                 </div>
 
                 <!-- Thermal Management -->
-                <div class="card-hover bg-gradient-to-br from-white to-red-50 rounded-2xl overflow-hidden shadow-xl border border-red-100">
+                <div
+                    class="card-hover bg-gradient-to-br from-white to-red-50 rounded-2xl overflow-hidden shadow-xl border border-red-100">
                     <div class="project-image h-56">
-                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop" alt="Thermal Analysis" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop"
+                            alt="Thermal Analysis" class="w-full h-full object-cover">
                     </div>
                     <div class="p-8">
                         <div class="flex items-center gap-2 mb-3">
@@ -601,7 +656,8 @@
                         <span class="section-header">Key Responsibilities & Technical Contributions</span>
                     </h3>
                     <div class="grid md:grid-cols-2 gap-8">
-                        <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8 border-l-4 border-purple-500">
+                        <div
+                            class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8 border-l-4 border-purple-500">
                             <div class="flex items-center gap-3 mb-4">
                                 <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center">
                                     <span class="text-2xl">🎨</span>
@@ -627,7 +683,8 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-8 border-l-4 border-green-500">
+                        <div
+                            class="bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-8 border-l-4 border-green-500">
                             <div class="flex items-center gap-3 mb-4">
                                 <div class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center">
                                     <span class="text-2xl">🔬</span>
@@ -660,9 +717,10 @@
     </section>
 
     <!-- Bharat Aero Section -->
-    <section id="bharataero" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section id="bharataero"
+        class="py-20 bg-gradient-to-br from-gray-50 to-blue-50 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
-        
+
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="text-center mb-16">
                 <div class="inline-block mb-4">
@@ -675,7 +733,8 @@
                 </h2>
                 <p class="text-gray-600 text-xl">Delhi, India</p>
                 <div class="max-w-3xl mx-auto mt-6">
-                    <p class="text-gray-700 text-lg leading-relaxed">Defense product design and development with focus on air defense systems and electronic enclosures</p>
+                    <p class="text-gray-700 text-lg leading-relaxed">Defense product design and development with focus
+                        on air defense systems and electronic enclosures</p>
                 </div>
             </div>
 
@@ -683,15 +742,19 @@
                 <!-- Air Defense -->
                 <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-2xl border-t-4 border-red-500">
                     <div class="project-image h-64">
-                        <img src="https://github.com/user-attachments/assets/89c409ea-3bab-4d36-9417-b0143d58d686" alt="Air Defense" class="w-full h-full object-cover">
+                        <img src="https://github.com/user-attachments/assets/89c409ea-3bab-4d36-9417-b0143d58d686"
+                            alt="Air Defense" class="w-full h-full object-cover">
                     </div>
                     <div class="p-8">
                         <div class="flex items-center gap-2 mb-4">
                             <span class="px-3 py-1 bg-red-500 text-white rounded-full text-xs font-bold">DEFENSE</span>
-                            <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-semibold">3 Operations</span>
+                            <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-semibold">3
+                                Operations</span>
                         </div>
                         <h3 class="text-2xl font-bold text-gray-900 mb-4">Portable Air Defence Vehicle Solution</h3>
-                        <p class="text-gray-700 mb-6 leading-relaxed">Comprehensive design of portable air defense vehicle solutions with strategic placement and installation of defense products ensuring optimal working capabilities.</p>
+                        <p class="text-gray-700 mb-6 leading-relaxed">Comprehensive design of portable air defense
+                            vehicle solutions with strategic placement and installation of defense products ensuring
+                            optimal working capabilities.</p>
                         <ul class="text-gray-700 space-y-3">
                             <li class="flex items-start gap-2">
                                 <span class="text-red-500 font-bold">◉</span>
@@ -712,14 +775,17 @@
                 <!-- Auto Pan Motion -->
                 <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-2xl border-t-4 border-blue-500">
                     <div class="project-image h-64">
-                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop" alt="Auto Pan Motion" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop"
+                            alt="Auto Pan Motion" class="w-full h-full object-cover">
                     </div>
                     <div class="p-8">
                         <div class="flex items-center gap-2 mb-4">
-                            <span class="px-3 py-1 bg-blue-500 text-white rounded-full text-xs font-bold">AUTOMATION</span>
+                            <span
+                                class="px-3 py-1 bg-blue-500 text-white rounded-full text-xs font-bold">AUTOMATION</span>
                         </div>
                         <h3 class="text-2xl font-bold text-gray-900 mb-4">Auto Pan Motion Assembly</h3>
-                        <p class="text-gray-700 mb-6 leading-relaxed">Designed stepper motor-driven rotating assembly for air defense product installation with precision control capabilities.</p>
+                        <p class="text-gray-700 mb-6 leading-relaxed">Designed stepper motor-driven rotating assembly
+                            for air defense product installation with precision control capabilities.</p>
                         <ul class="text-gray-700 space-y-3">
                             <li class="flex items-start gap-2">
                                 <span class="text-blue-500 font-bold">◉</span>
@@ -740,14 +806,17 @@
                 <!-- Electrical Cabinet -->
                 <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-2xl border-t-4 border-green-500">
                     <div class="project-image h-64">
-                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop" alt="Electrical Cabinet" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop"
+                            alt="Electrical Cabinet" class="w-full h-full object-cover">
                     </div>
                     <div class="p-8">
                         <div class="flex items-center gap-2 mb-4">
-                            <span class="px-3 py-1 bg-green-500 text-white rounded-full text-xs font-bold">ENCLOSURE</span>
+                            <span
+                                class="px-3 py-1 bg-green-500 text-white rounded-full text-xs font-bold">ENCLOSURE</span>
                         </div>
                         <h3 class="text-2xl font-bold text-gray-900 mb-4">Electrical Cabinet & Enclosure</h3>
-                        <p class="text-gray-700 mb-6 leading-relaxed">Design and development of ruggedized cabinets and enclosures for defense electronics with thermal management.</p>
+                        <p class="text-gray-700 mb-6 leading-relaxed">Design and development of ruggedized cabinets and
+                            enclosures for defense electronics with thermal management.</p>
                         <ul class="text-gray-700 space-y-3">
                             <li class="flex items-start gap-2">
                                 <span class="text-green-500 font-bold">◉</span>
@@ -768,14 +837,17 @@
                 <!-- Prison Jamming -->
                 <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-2xl border-t-4 border-purple-500">
                     <div class="project-image h-64">
-                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop" alt="Prison Jamming" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop"
+                            alt="Prison Jamming" class="w-full h-full object-cover">
                     </div>
                     <div class="p-8">
                         <div class="flex items-center gap-2 mb-4">
-                            <span class="px-3 py-1 bg-purple-500 text-white rounded-full text-xs font-bold">SECURITY</span>
+                            <span
+                                class="px-3 py-1 bg-purple-500 text-white rounded-full text-xs font-bold">SECURITY</span>
                         </div>
                         <h3 class="text-2xl font-bold text-gray-900 mb-4">Prison Cellular Jamming Solution</h3>
-                        <p class="text-gray-700 mb-6 leading-relaxed">Complete survey, planning, design, and development of tower assemblies for cellular jamming systems in correctional facilities.</p>
+                        <p class="text-gray-700 mb-6 leading-relaxed">Complete survey, planning, design, and development
+                            of tower assemblies for cellular jamming systems in correctional facilities.</p>
                         <ul class="text-gray-700 space-y-3">
                             <li class="flex items-start gap-2">
                                 <span class="text-purple-500 font-bold">◉</span>
@@ -812,14 +884,16 @@
                             <span class="text-3xl">🔩</span>
                         </div>
                         <h4 class="font-bold text-blue-600 mb-3 text-lg">Materials</h4>
-                        <p class="text-gray-700">FRP, acrylic sheets, metal fabrication, composite materials, heat sinks</p>
+                        <p class="text-gray-700">FRP, acrylic sheets, metal fabrication, composite materials, heat sinks
+                        </p>
                     </div>
                     <div class="text-center p-6 bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl">
                         <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
                             <span class="text-3xl">📋</span>
                         </div>
                         <h4 class="font-bold text-green-600 mb-3 text-lg">Deliverables</h4>
-                        <p class="text-gray-700">3D models, 2D drawings, assemblies, weldments, BOM, technical documentation</p>
+                        <p class="text-gray-700">3D models, 2D drawings, assemblies, weldments, BOM, technical
+                            documentation</p>
                     </div>
                 </div>
             </div>
@@ -829,7 +903,7 @@
     <!-- College Work Section -->
     <section id="college" class="py-20 bg-white px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div class="absolute top-1/2 right-0 w-96 h-96 bg-green-200 rounded-full opacity-20 blur-3xl"></div>
-        
+
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="text-center mb-16">
                 <div class="inline-block mb-4">
@@ -842,22 +916,28 @@
                 </h2>
                 <p class="text-gray-600 text-xl">SIIC IIT-Kanpur</p>
                 <div class="max-w-3xl mx-auto mt-6">
-                    <p class="text-gray-700 text-lg leading-relaxed">Innovation and R&D projects focused on sustainable technology and IoT-based automation systems</p>
+                    <p class="text-gray-700 text-lg leading-relaxed">Innovation and R&D projects focused on sustainable
+                        technology and IoT-based automation systems</p>
                 </div>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Smart Irrigation -->
-                <div class="card-hover bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl overflow-hidden shadow-2xl border-2 border-green-200">
+                <div
+                    class="card-hover bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl overflow-hidden shadow-2xl border-2 border-green-200">
                     <div class="project-image h-52">
-                        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400&h=300&fit=crop" alt="Smart Irrigation" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400&h=300&fit=crop"
+                            alt="Smart Irrigation" class="w-full h-full object-cover">
                     </div>
                     <div class="p-8">
                         <h3 class="text-2xl font-bold text-gray-900 mb-3">Smart Irrigation System</h3>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-green-500 text-white rounded-full text-xs font-bold">₹66,956</span>
-                            <span class="px-3 py-1 bg-blue-500 text-white rounded-full text-xs font-bold">SIIC IIT-K</span>
-                            <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">3rd Place</span>
+                            <span
+                                class="px-3 py-1 bg-green-500 text-white rounded-full text-xs font-bold">₹66,956</span>
+                            <span class="px-3 py-1 bg-blue-500 text-white rounded-full text-xs font-bold">SIIC
+                                IIT-K</span>
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">3rd
+                                Place</span>
                         </div>
                         <p class="text-gray-600 text-sm mb-4">Duration: 1.2 years | Team: 3</p>
                         <ul class="text-gray-700 space-y-2 text-sm">
@@ -878,15 +958,18 @@
                 </div>
 
                 <!-- Black Carbon Sinkers -->
-                <div class="card-hover bg-gradient-to-br from-gray-50 to-slate-50 rounded-2xl overflow-hidden shadow-2xl border-2 border-gray-200">
+                <div
+                    class="card-hover bg-gradient-to-br from-gray-50 to-slate-50 rounded-2xl overflow-hidden shadow-2xl border-2 border-gray-200">
                     <div class="project-image h-52">
-                        <img src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?w=400&h=300&fit=crop" alt="Carbon Capture" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?w=400&h=300&fit=crop"
+                            alt="Carbon Capture" class="w-full h-full object-cover">
                     </div>
                     <div class="p-8">
                         <h3 class="text-2xl font-bold text-gray-900 mb-3">Black Carbon Sinkers</h3>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="px-3 py-1 bg-gray-500 text-white rounded-full text-xs font-bold">₹50,495</span>
-                            <span class="px-3 py-1 bg-blue-500 text-white rounded-full text-xs font-bold">SIIC IIT-K</span>
+                            <span class="px-3 py-1 bg-blue-500 text-white rounded-full text-xs font-bold">SIIC
+                                IIT-K</span>
                         </div>
                         <p class="text-gray-600 text-sm mb-4">Duration: 10 months | Team: 4</p>
                         <ul class="text-gray-700 space-y-2 text-sm">
@@ -907,15 +990,19 @@
                 </div>
 
                 <!-- Connecting Rod Analysis -->
-                <div class="card-hover bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl overflow-hidden shadow-2xl border-2 border-blue-200">
+                <div
+                    class="card-hover bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl overflow-hidden shadow-2xl border-2 border-blue-200">
                     <div class="project-image h-52">
-                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop" alt="FEA Analysis" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop"
+                            alt="FEA Analysis" class="w-full h-full object-cover">
                     </div>
                     <div class="p-8">
                         <h3 class="text-2xl font-bold text-gray-900 mb-3">Connecting Rod Analysis</h3>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-purple-500 text-white rounded-full text-xs font-bold">Published</span>
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-semibold">IJERMCE</span>
+                            <span
+                                class="px-3 py-1 bg-purple-500 text-white rounded-full text-xs font-bold">Published</span>
+                            <span
+                                class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-semibold">IJERMCE</span>
                         </div>
                         <p class="text-gray-600 text-sm mb-4">Duration: 4 months | Team: 3</p>
                         <ul class="text-gray-700 space-y-2 text-sm">
@@ -936,14 +1023,17 @@
                 </div>
 
                 <!-- Honeycomb Structure -->
-                <div class="card-hover bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl overflow-hidden shadow-2xl border-2 border-yellow-200">
+                <div
+                    class="card-hover bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl overflow-hidden shadow-2xl border-2 border-yellow-200">
                     <div class="project-image h-52">
-                        <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&h=300&fit=crop" alt="Honeycomb Structure" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&h=300&fit=crop"
+                            alt="Honeycomb Structure" class="w-full h-full object-cover">
                     </div>
                     <div class="p-8">
                         <h3 class="text-2xl font-bold text-gray-900 mb-3">Honeycomb Structure</h3>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-yellow-500 text-white rounded-full text-xs font-bold">Analysis</span>
+                            <span
+                                class="px-3 py-1 bg-yellow-500 text-white rounded-full text-xs font-bold">Analysis</span>
                         </div>
                         <p class="text-gray-600 text-sm mb-4">Duration: 3 months | Team: 2</p>
                         <ul class="text-gray-700 space-y-2 text-sm">
@@ -964,15 +1054,19 @@
                 </div>
 
                 <!-- Prototype Development -->
-                <div class="card-hover bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl overflow-hidden shadow-2xl border-2 border-pink-200">
+                <div
+                    class="card-hover bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl overflow-hidden shadow-2xl border-2 border-pink-200">
                     <div class="project-image h-52">
-                        <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=400&h=300&fit=crop" alt="Prototype Development" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=400&h=300&fit=crop"
+                            alt="Prototype Development" class="w-full h-full object-cover">
                     </div>
                     <div class="p-8">
                         <h3 class="text-2xl font-bold text-gray-900 mb-3">Prototype Development</h3>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-pink-500 text-white rounded-full text-xs font-bold">2 Prototypes</span>
-                            <span class="px-3 py-1 bg-rose-100 text-rose-700 rounded-full text-xs font-semibold">1 Product</span>
+                            <span class="px-3 py-1 bg-pink-500 text-white rounded-full text-xs font-bold">2
+                                Prototypes</span>
+                            <span class="px-3 py-1 bg-rose-100 text-rose-700 rounded-full text-xs font-semibold">1
+                                Product</span>
                         </div>
                         <p class="text-gray-600 text-sm mb-4">At SIIC IIT-Kanpur</p>
                         <ul class="text-gray-700 space-y-2 text-sm">
@@ -993,14 +1087,17 @@
                 </div>
 
                 <!-- Connecting Rod Fabrication -->
-                <div class="card-hover bg-gradient-to-br from-purple-50 to-violet-50 rounded-2xl overflow-hidden shadow-2xl border-2 border-purple-200">
+                <div
+                    class="card-hover bg-gradient-to-br from-purple-50 to-violet-50 rounded-2xl overflow-hidden shadow-2xl border-2 border-purple-200">
                     <div class="project-image h-52">
-                        <img src="https://images.unsplash.com/photo-1581092918484-8313e1f7e8c7?w=400&h=300&fit=crop" alt="Fabrication" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1581092918484-8313e1f7e8c7?w=400&h=300&fit=crop"
+                            alt="Fabrication" class="w-full h-full object-cover">
                     </div>
                     <div class="p-8">
                         <h3 class="text-2xl font-bold text-gray-900 mb-3">Connecting Rod Fabrication</h3>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-purple-500 text-white rounded-full text-xs font-bold">Fabrication</span>
+                            <span
+                                class="px-3 py-1 bg-purple-500 text-white rounded-full text-xs font-bold">Fabrication</span>
                         </div>
                         <p class="text-gray-600 text-sm mb-4">Duration: 6 months | Team: 3</p>
                         <ul class="text-gray-700 space-y-2 text-sm">
@@ -1023,7 +1120,8 @@
 
             <!-- Publications & Patents -->
             <div class="mt-16 grid md:grid-cols-2 gap-8">
-                <div class="stat-card bg-gradient-to-br from-purple-500 to-indigo-600 rounded-3xl p-10 shadow-2xl text-white">
+                <div
+                    class="stat-card bg-gradient-to-br from-purple-500 to-indigo-600 rounded-3xl p-10 shadow-2xl text-white">
                     <div class="flex items-center gap-4 mb-6">
                         <div class="w-16 h-16 bg-white/20 backdrop-blur rounded-2xl flex items-center justify-center">
                             <span class="text-4xl">📚</span>
@@ -1031,12 +1129,15 @@
                         <h3 class="text-3xl font-bold">Publications</h3>
                     </div>
                     <div class="space-y-4">
-                        <div class="bg-white/10 backdrop-blur p-5 rounded-xl border border-white/20 hover:bg-white/20 transition">
-                            <h4 class="font-bold text-lg mb-2">Comparative Study of Stress Analysis on Connecting Rod Using FEM</h4>
+                        <div
+                            class="bg-white/10 backdrop-blur p-5 rounded-xl border border-white/20 hover:bg-white/20 transition">
+                            <h4 class="font-bold text-lg mb-2">Comparative Study of Stress Analysis on Connecting Rod
+                                Using FEM</h4>
                             <p class="text-sm text-white/80">IJERMCE | Vol 9, Issue 7, July 2022</p>
                             <p class="text-xs text-white/60 mt-2">ISSN (Online) 2456-1290</p>
                         </div>
-                        <div class="bg-white/10 backdrop-blur p-5 rounded-xl border border-white/20 hover:bg-white/20 transition">
+                        <div
+                            class="bg-white/10 backdrop-blur p-5 rounded-xl border border-white/20 hover:bg-white/20 transition">
                             <h4 class="font-bold text-lg mb-2">Mathematical Analysis of Solar Flare</h4>
                             <p class="text-sm text-white/80">IJMMMM | Vol 1, Issue 1, January 2022</p>
                             <p class="text-xs text-white/60 mt-2">ISSN: 2583-5688</p>
@@ -1044,7 +1145,8 @@
                     </div>
                 </div>
 
-                <div class="stat-card bg-gradient-to-br from-green-500 to-teal-600 rounded-3xl p-10 shadow-2xl text-white">
+                <div
+                    class="stat-card bg-gradient-to-br from-green-500 to-teal-600 rounded-3xl p-10 shadow-2xl text-white">
                     <div class="flex items-center gap-4 mb-6">
                         <div class="w-16 h-16 bg-white/20 backdrop-blur rounded-2xl flex items-center justify-center">
                             <span class="text-4xl">🏆</span>
@@ -1052,12 +1154,14 @@
                         <h3 class="text-3xl font-bold">Patents Filed</h3>
                     </div>
                     <div class="space-y-4">
-                        <div class="bg-white/10 backdrop-blur p-5 rounded-xl border border-white/20 hover:bg-white/20 transition">
+                        <div
+                            class="bg-white/10 backdrop-blur p-5 rounded-xl border border-white/20 hover:bg-white/20 transition">
                             <h4 class="font-bold text-lg mb-2">A Smart Irrigation System and Its Method Thereof</h4>
                             <p class="text-sm text-white/80">Application No.: 202311003003</p>
                             <p class="text-xs text-white/60 mt-2">Issued: January 27, 2023</p>
                         </div>
-                        <div class="bg-white/10 backdrop-blur p-5 rounded-xl border border-white/20 hover:bg-white/20 transition">
+                        <div
+                            class="bg-white/10 backdrop-blur p-5 rounded-xl border border-white/20 hover:bg-white/20 transition">
                             <h4 class="font-bold text-lg mb-2">Novel Particulate Filtration System</h4>
                             <p class="text-sm text-white/80">Application No.: 202311031944</p>
                             <p class="text-xs text-white/60 mt-2">Issued: May 4, 2023</p>
@@ -1069,9 +1173,10 @@
     </section>
 
     <!-- Achievements Section -->
-    <section id="achievements" class="py-20 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section id="achievements"
+        class="py-20 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div class="absolute top-0 left-1/2 w-96 h-96 bg-yellow-200 rounded-full opacity-20 blur-3xl"></div>
-        
+
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="text-center mb-16">
                 <div class="inline-block mb-4">
@@ -1083,97 +1188,123 @@
                     <span class="section-header">Awards & <span class="gradient-text">Achievements</span></span>
                 </h2>
                 <div class="max-w-3xl mx-auto mt-6">
-                    <p class="text-gray-700 text-lg leading-relaxed">Recognition for innovation, entrepreneurship, and technical excellence throughout academic and professional journey</p>
+                    <p class="text-gray-700 text-lg leading-relaxed">Recognition for innovation, entrepreneurship, and
+                        technical excellence throughout academic and professional journey</p>
                 </div>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                 <!-- MIT Grant -->
-                <div class="achievement-badge bg-white rounded-3xl p-8 shadow-2xl border-t-4 border-yellow-500 hover:border-yellow-400">
-                    <div class="w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
+                <div
+                    class="achievement-badge bg-white rounded-3xl p-8 shadow-2xl border-t-4 border-yellow-500 hover:border-yellow-400">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
                         <span class="text-4xl">🏅</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">MIT Solve Micro-Grant</h3>
                     <div class="text-center mb-4">
                         <span class="text-3xl font-black gradient-text">$300</span>
                     </div>
-                    <p class="text-gray-700 text-center leading-relaxed">Received Micro-Grant from MIT USA at MIT Solve Event for innovative solution</p>
+                    <p class="text-gray-700 text-center leading-relaxed">Received Micro-Grant from MIT USA at MIT Solve
+                        Event for innovative solution</p>
                 </div>
 
                 <!-- Young Innovator -->
-                <div class="achievement-badge bg-white rounded-3xl p-8 shadow-2xl border-t-4 border-blue-500 hover:border-blue-400">
-                    <div class="w-20 h-20 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
+                <div
+                    class="achievement-badge bg-white rounded-3xl p-8 shadow-2xl border-t-4 border-blue-500 hover:border-blue-400">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
                         <span class="text-4xl">🎓</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Young Innovator Award</h3>
                     <div class="text-center mb-4">
-                        <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">SIIC IIT Kanpur</span>
+                        <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">SIIC IIT
+                            Kanpur</span>
                     </div>
-                    <p class="text-gray-700 text-center leading-relaxed">Awarded as Young Innovator and Entrepreneur by SIIC IIT Kanpur</p>
+                    <p class="text-gray-700 text-center leading-relaxed">Awarded as Young Innovator and Entrepreneur by
+                        SIIC IIT Kanpur</p>
                 </div>
 
                 <!-- REC Innovation -->
-                <div class="achievement-badge bg-white rounded-3xl p-8 shadow-2xl border-t-4 border-green-500 hover:border-green-400">
-                    <div class="w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
+                <div
+                    class="achievement-badge bg-white rounded-3xl p-8 shadow-2xl border-t-4 border-green-500 hover:border-green-400">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
                         <span class="text-4xl">🥉</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">3rd Place - REC Innovation</h3>
                     <div class="text-center mb-4">
-                        <span class="px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-semibold">IIT Kanpur</span>
+                        <span class="px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-semibold">IIT
+                            Kanpur</span>
                     </div>
-                    <p class="text-gray-700 text-center leading-relaxed">Smart Irrigation System secured 3rd place at REC Innovation Platform</p>
+                    <p class="text-gray-700 text-center leading-relaxed">Smart Irrigation System secured 3rd place at
+                        REC Innovation Platform</p>
                 </div>
 
                 <!-- Utopia Event -->
-                <div class="achievement-badge bg-white rounded-3xl p-8 shadow-2xl border-t-4 border-purple-500 hover:border-purple-400">
-                    <div class="w-20 h-20 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
+                <div
+                    class="achievement-badge bg-white rounded-3xl p-8 shadow-2xl border-t-4 border-purple-500 hover:border-purple-400">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
                         <span class="text-4xl">🏆</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Utopia - 3rd Runner Up</h3>
                     <div class="text-center mb-4">
-                        <span class="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">IIT-BHU</span>
+                        <span
+                            class="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">IIT-BHU</span>
                     </div>
-                    <p class="text-gray-700 text-center leading-relaxed">3rd Runner-up at Utopia Event in Event Scientist Category</p>
+                    <p class="text-gray-700 text-center leading-relaxed">3rd Runner-up at Utopia Event in Event
+                        Scientist Category</p>
                 </div>
 
                 <!-- UP Startup -->
-                <div class="achievement-badge bg-white rounded-3xl p-8 shadow-2xl border-t-4 border-red-500 hover:border-red-400">
-                    <div class="w-20 h-20 bg-gradient-to-br from-red-400 to-pink-500 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
+                <div
+                    class="achievement-badge bg-white rounded-3xl p-8 shadow-2xl border-t-4 border-red-500 hover:border-red-400">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-red-400 to-pink-500 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
                         <span class="text-4xl">🚀</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">UP-Startup Invitation</h3>
                     <div class="text-center mb-4">
                         <span class="px-4 py-2 bg-red-100 text-red-700 rounded-full text-sm font-semibold">AKTU</span>
                     </div>
-                    <p class="text-gray-700 text-center leading-relaxed">Invited to Lucknow for UP-Startup Event for innovative project showcase</p>
+                    <p class="text-gray-700 text-center leading-relaxed">Invited to Lucknow for UP-Startup Event for
+                        innovative project showcase</p>
                 </div>
 
                 <!-- Campus Ambassador -->
-                <div class="achievement-badge bg-white rounded-3xl p-8 shadow-2xl border-t-4 border-indigo-500 hover:border-indigo-400">
-                    <div class="w-20 h-20 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
+                <div
+                    class="achievement-badge bg-white rounded-3xl p-8 shadow-2xl border-t-4 border-indigo-500 hover:border-indigo-400">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
                         <span class="text-4xl">👥</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Campus Ambassador</h3>
                     <div class="text-center mb-4">
-                        <span class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-semibold">IIT-BHU</span>
+                        <span
+                            class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-semibold">IIT-BHU</span>
                     </div>
-                    <p class="text-gray-700 text-center leading-relaxed">Awarded as Campus Ambassador for representing institute initiatives</p>
+                    <p class="text-gray-700 text-center leading-relaxed">Awarded as Campus Ambassador for representing
+                        institute initiatives</p>
                 </div>
             </div>
 
             <!-- Statistics -->
             <div class="grid md:grid-cols-3 gap-8 mb-16">
-                <div class="stat-card text-center p-10 bg-gradient-to-br from-purple-500 to-pink-600 rounded-3xl shadow-2xl text-white transform hover:scale-105 transition">
+                <div
+                    class="stat-card text-center p-10 bg-gradient-to-br from-purple-500 to-pink-600 rounded-3xl shadow-2xl text-white transform hover:scale-105 transition">
                     <div class="text-6xl font-black mb-3">3</div>
                     <p class="text-xl font-bold mb-2">Funding & Grants</p>
                     <p class="text-sm text-white/80">Received during undergraduate studies</p>
                 </div>
-                <div class="stat-card text-center p-10 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-3xl shadow-2xl text-white transform hover:scale-105 transition">
+                <div
+                    class="stat-card text-center p-10 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-3xl shadow-2xl text-white transform hover:scale-105 transition">
                     <div class="text-6xl font-black mb-3">2</div>
                     <p class="text-xl font-bold mb-2">Research Papers</p>
                     <p class="text-sm text-white/80">Published in international journals</p>
                 </div>
-                <div class="stat-card text-center p-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-3xl shadow-2xl text-white transform hover:scale-105 transition">
+                <div
+                    class="stat-card text-center p-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-3xl shadow-2xl text-white transform hover:scale-105 transition">
                     <div class="text-6xl font-black mb-3">2</div>
                     <p class="text-xl font-bold mb-2">Patents Filed</p>
                     <p class="text-sm text-white/80">Innovative solutions in agriculture & environment</p>
@@ -1186,42 +1317,50 @@
                     <span class="section-header">Professional Certifications & Training</span>
                 </h3>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-5 rounded-xl shadow-md hover:shadow-xl transition border border-purple-100">
+                    <div
+                        class="bg-gradient-to-br from-purple-50 to-pink-50 p-5 rounded-xl shadow-md hover:shadow-xl transition border border-purple-100">
                         <div class="text-2xl mb-2">📐</div>
                         <p class="font-bold text-gray-800 text-sm mb-1">AUTO-CAD Course</p>
                         <p class="text-xs text-gray-600">NIT Nariya Varanasi</p>
                     </div>
-                    <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-5 rounded-xl shadow-md hover:shadow-xl transition border border-blue-100">
+                    <div
+                        class="bg-gradient-to-br from-blue-50 to-cyan-50 p-5 rounded-xl shadow-md hover:shadow-xl transition border border-blue-100">
                         <div class="text-2xl mb-2">🛰️</div>
                         <p class="font-bold text-gray-800 text-sm mb-1">Wildlife Navigation</p>
                         <p class="text-xs text-gray-600">IIRS ISRO - 8 Weeks</p>
                     </div>
-                    <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-5 rounded-xl shadow-md hover:shadow-xl transition border border-green-100">
+                    <div
+                        class="bg-gradient-to-br from-green-50 to-emerald-50 p-5 rounded-xl shadow-md hover:shadow-xl transition border border-green-100">
                         <div class="text-2xl mb-2">🌊</div>
                         <p class="font-bold text-gray-800 text-sm mb-1">CFD Course</p>
                         <p class="text-xs text-gray-600">IIT Bombay - 2 Weeks</p>
                     </div>
-                    <div class="bg-gradient-to-br from-yellow-50 to-orange-50 p-5 rounded-xl shadow-md hover:shadow-xl transition border border-yellow-100">
+                    <div
+                        class="bg-gradient-to-br from-yellow-50 to-orange-50 p-5 rounded-xl shadow-md hover:shadow-xl transition border border-yellow-100">
                         <div class="text-2xl mb-2">💨</div>
                         <p class="font-bold text-gray-800 text-sm mb-1">Wind Energy</p>
                         <p class="text-xs text-gray-600">Coursera - 2 Weeks</p>
                     </div>
-                    <div class="bg-gradient-to-br from-red-50 to-pink-50 p-5 rounded-xl shadow-md hover:shadow-xl transition border border-red-100">
+                    <div
+                        class="bg-gradient-to-br from-red-50 to-pink-50 p-5 rounded-xl shadow-md hover:shadow-xl transition border border-red-100">
                         <div class="text-2xl mb-2">🔬</div>
                         <p class="font-bold text-gray-800 text-sm mb-1">Material Science</p>
                         <p class="text-xs text-gray-600">Coursera - 2 Weeks</p>
                     </div>
-                    <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-5 rounded-xl shadow-md hover:shadow-xl transition border border-indigo-100">
+                    <div
+                        class="bg-gradient-to-br from-indigo-50 to-purple-50 p-5 rounded-xl shadow-md hover:shadow-xl transition border border-indigo-100">
                         <div class="text-2xl mb-2">📊</div>
                         <p class="font-bold text-gray-800 text-sm mb-1">Project Management</p>
                         <p class="text-xs text-gray-600">2 Weeks Course</p>
                     </div>
-                    <div class="bg-gradient-to-br from-teal-50 to-cyan-50 p-5 rounded-xl shadow-md hover:shadow-xl transition border border-teal-100">
+                    <div
+                        class="bg-gradient-to-br from-teal-50 to-cyan-50 p-5 rounded-xl shadow-md hover:shadow-xl transition border border-teal-100">
                         <div class="text-2xl mb-2">🔧</div>
                         <p class="font-bold text-gray-800 text-sm mb-1">SolidWorks Training</p>
                         <p class="text-xs text-gray-600">One Month Vocational</p>
                     </div>
-                    <div class="bg-gradient-to-br from-pink-50 to-rose-50 p-5 rounded-xl shadow-md hover:shadow-xl transition border border-pink-100">
+                    <div
+                        class="bg-gradient-to-br from-pink-50 to-rose-50 p-5 rounded-xl shadow-md hover:shadow-xl transition border border-pink-100">
                         <div class="text-2xl mb-2">💼</div>
                         <p class="font-bold text-gray-800 text-sm mb-1">Entrepreneurship</p>
                         <p class="text-xs text-gray-600">Workshop - IIT Kanpur</p>
@@ -1233,16 +1372,22 @@
 
     <!-- Footer -->
     <footer class="gradient-bg py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white to-transparent opacity-50"></div>
-        
+        <div
+            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white to-transparent opacity-50">
+        </div>
+
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="grid md:grid-cols-3 gap-12 text-white mb-12">
                 <div>
                     <h3 class="text-3xl font-bold mb-4">Akash Kumar Patel</h3>
-                    <p class="text-gray-200 mb-6 leading-relaxed">Mechanical Design Engineer specializing in UAV design, structural analysis, and product development. Passionate about creating innovative aerospace solutions.</p>
+                    <p class="text-gray-200 mb-6 leading-relaxed">Mechanical Design Engineer specializing in UAV design,
+                        structural analysis, and product development. Passionate about creating innovative aerospace
+                        solutions.</p>
                     <div class="flex items-center gap-2 text-gray-200">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd"
+                                d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                                clip-rule="evenodd" />
                         </svg>
                         <span>New Delhi, India</span>
                     </div>
@@ -1251,20 +1396,24 @@
                     <h4 class="text-xl font-bold mb-6">Quick Links</h4>
                     <ul class="space-y-3">
                         <li><a href="#home" class="text-gray-200 hover:text-white transition flex items-center gap-2">
-                            <span class="text-yellow-300">▹</span> Home
-                        </a></li>
-                        <li><a href="#endureair" class="text-gray-200 hover:text-white transition flex items-center gap-2">
-                            <span class="text-yellow-300">▹</span> EndureAir Work
-                        </a></li>
-                        <li><a href="#bharataero" class="text-gray-200 hover:text-white transition flex items-center gap-2">
-                            <span class="text-yellow-300">▹</span> Bharat Aero Work
-                        </a></li>
-                        <li><a href="#college" class="text-gray-200 hover:text-white transition flex items-center gap-2">
-                            <span class="text-yellow-300">▹</span> College Projects
-                        </a></li>
-                        <li><a href="#achievements" class="text-gray-200 hover:text-white transition flex items-center gap-2">
-                            <span class="text-yellow-300">▹</span> Achievements
-                        </a></li>
+                                <span class="text-yellow-300">▹</span> Home
+                            </a></li>
+                        <li><a href="#endureair"
+                                class="text-gray-200 hover:text-white transition flex items-center gap-2">
+                                <span class="text-yellow-300">▹</span> EndureAir Work
+                            </a></li>
+                        <li><a href="#bharataero"
+                                class="text-gray-200 hover:text-white transition flex items-center gap-2">
+                                <span class="text-yellow-300">▹</span> Bharat Aero Work
+                            </a></li>
+                        <li><a href="#college"
+                                class="text-gray-200 hover:text-white transition flex items-center gap-2">
+                                <span class="text-yellow-300">▹</span> College Projects
+                            </a></li>
+                        <li><a href="#achievements"
+                                class="text-gray-200 hover:text-white transition flex items-center gap-2">
+                                <span class="text-yellow-300">▹</span> Achievements
+                            </a></li>
                     </ul>
                 </div>
                 <div>
@@ -1272,271 +1421,295 @@
                     <ul class="space-y-4 text-gray-200">
                         <li class="flex items-start gap-3">
                             <svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                             </svg>
                             <span class="break-all">akash18405recmainpuri@gmail.com</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                                <path
+                                    d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                             </svg>
                             <span>+91-6387702933</span>
                         </li>
                         <li>
-                            <a href="https://www.linkedin.com/in/akash-kumar-patel-5812831b1/" target="_blank" class="flex items-center gap-3 hover:text-white transition">
+                            <a href="https://www.linkedin.com/in/akash-kumar-patel-5812831b1/" target="_blank"
+                                class="flex items-center gap-3 hover:text-white transition">
                                 <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"/>
+                                    <path fill-rule="evenodd"
+                                        d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
+                                        clip-rule="evenodd" />
                                 </svg>
                                 <span>LinkedIn Profile</span>
                             </a>
                         </li>
                         <li class="flex items-start gap-3">
                             <svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3z"/>
+                                <path
+                                    d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3z" />
                             </svg>
                             <span>B.Tech Mechanical Engineering<br>Rajakiya Engineering College Mainpuri</span>
                         </li>
                     </ul>
                 </div>
             </div>
-            
+
             <div class="border-t border-white/20 pt-8 text-center text-gray-200">
                 <p class="text-lg font-semibold mb-2">&copy; 2024 Akash Kumar Patel. All rights reserved.</p>
-                <p class="text-sm">Mechanical Design Engineer Portfolio | Specialized in UAV Design • Structural Analysis • Product Development • CAD/CAE</p>
+                <p class="text-sm">Mechanical Design Engineer Portfolio | Specialized in UAV Design • Structural
+                    Analysis • Product Development • CAD/CAE</p>
                 <div class="mt-4 flex justify-center gap-4 text-xs">
                     <span class="px-3 py-1 bg-white/10 rounded-full">3.5+ Years Experience</span>
                     <span class="px-3 py-1 bg-white/10 rounded-full">SolidWorks Expert</span>
-                    <span class="px-3 py-1 <span class="px-3 py-1 bg-purple-500 text-white rounded-full text-xs font-bold">FLAGSHIP</span>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">160 KG MTOW</span>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Tri-Blade Heli-Quad</h3>
-                        <ul class="text-gray-700 space-y-3 text-sm">
-                            <li class="flex items-start gap-2">
-                                <span class="text-purple-500 font-bold">▹</span>
-                                <span>Tri-blade helicopter rotor system generating 45kg lift</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-purple-500 font-bold">▹</span>
-                                <span>Dual fuselage configurations with gear ratios up to 8:1</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-purple-500 font-bold">▹</span>
-                                <span>Power monitoring system for 22.5KW consumption</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-purple-500 font-bold">▹</span>
-                                <span>Parachute integration sustaining 6G force</span>
-                            </li>
-                        </ul>
-                    </div>
+                    <span class="px-3 py-1 <span class=" px-3 py-1 bg-purple-500 text-white rounded-full text-xs
+                        font-bold">FLAGSHIP</span>
+                    <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">160 KG
+                        MTOW</span>
                 </div>
-
-                <!-- Landing Gear -->
-                <div class="card-hover bg-gradient-to-br from-white to-blue-50 rounded-2xl overflow-hidden shadow-xl border border-blue-100">
-                    <div class="project-image h-56">
-                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop" alt="Landing Gear" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-8">
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="px-3 py-1 bg-blue-500 text-white rounded-full text-xs font-bold">STRUCTURAL</span>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Landing Gear Optimization</h3>
-                        <ul class="text-gray-700 space-y-3 text-sm">
-                            <li class="flex items-start gap-2">
-                                <span class="text-blue-500 font-bold">▹</span>
-                                <span>Enhanced structural strength for hard landing scenarios</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-blue-500 font-bold">▹</span>
-                                <span>Impact load analysis and validation using FEA</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-blue-500 font-bold">▹</span>
-                                <span>Weight optimization while maintaining rigidity</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-blue-500 font-bold">▹</span>
-                                <span>Multiple iterations for performance improvement</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Rotor System -->
-                <div class="card-hover bg-gradient-to-br from-white to-green-50 rounded-2xl overflow-hidden shadow-xl border border-green-100">
-                    <div class="project-image h-56">
-                        <img src="https://images.unsplash.com/photo-1569025690938-a00729c9e1f9?w=400&h=300&fit=crop" alt="Rotor System" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-8">
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="px-3 py-1 bg-green-500 text-white rounded-full text-xs font-bold">CONTROL</span>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Helicopter Rotor Control</h3>
-                        <ul class="text-gray-700 space-y-3 text-sm">
-                            <li class="flex items-start gap-2">
-                                <span class="text-green-500 font-bold">▹</span>
-                                <span>Design of rotor control mechanisms</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-green-500 font-bold">▹</span>
-                                <span>Bearing selection based on loading conditions</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-green-500 font-bold">▹</span>
-                                <span>Vibration analysis and arm stiffener design</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-green-500 font-bold">▹</span>
-                                <span>Collective pitch optimization</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Heli-Quad 130KG -->
-                <div class="card-hover bg-gradient-to-br from-white to-pink-50 rounded-2xl overflow-hidden shadow-xl border border-pink-100">
-                    <div class="project-image h-56">
-                        <img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=300&fit=crop" alt="Heli-Quad" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-8">
-                        <div class="flex items-center gap-2 mb-3">
-                                                        <span class="px-3 py-1 bg-pink-500 text-white rounded-full text-xs font-bold">PAYLOAD</span>
-                            <span class="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-xs font-semibold">130 KG MTOW</span>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Heli-Quad Platform</h3>
-                        <ul class="text-gray-700 space-y-3 text-sm">
-                            <li class="flex items-start gap-2">
-                                <span class="text-pink-500 font-bold">▹</span>
-                                <span>50kg payload capacity vehicle design</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-pink-500 font-bold">▹</span>
-                                <span>Motor cooling equipment with effectiveness testing</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-pink-500 font-bold">▹</span>
-                                <span>Battery carriage upgrades and optimization</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-pink-500 font-bold">▹</span>
-                                <span>Transportation box design with accessories</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Tandem UAV -->
-                <div class="card-hover bg-gradient-to-br from-white to-yellow-50 rounded-2xl overflow-hidden shadow-xl border border-yellow-100">
-                    <div class="project-image h-56">
-                        <img src="https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=400&h=300&fit=crop" alt="Tandem UAV" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-8">
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="px-3 py-1 bg-yellow-500 text-white rounded-full text-xs font-bold">TANDEM</span>
-                            <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">56 KG MTOW</span>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Tandem UAV System</h3>
-                        <ul class="text-gray-700 space-y-3 text-sm">
-                            <li class="flex items-start gap-2">
-                                <span class="text-yellow-500 font-bold">▹</span>
-                                <span>Demo craft for multiple demonstrations</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-yellow-500 font-bold">▹</span>
-                                <span>Resonance problem resolution from vibrations</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-yellow-500 font-bold">▹</span>
-                                <span>Ground Control System (GCS) design</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-yellow-500 font-bold">▹</span>
-                                <span>380KV motor overheating solution</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Test Setups -->
-                <div class="card-hover bg-gradient-to-br from-white to-teal-50 rounded-2xl overflow-hidden shadow-xl border border-teal-100">
-                    <div class="project-image h-56">
-                        <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=400&h=300&fit=crop" alt="Test Setup" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-8">
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="px-3 py-1 bg-teal-500 text-white rounded-full text-xs font-bold">TESTING</span>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Test Rigs & Jigs</h3>
-                        <ul class="text-gray-700 space-y-3 text-sm">
-                            <li class="flex items-start gap-2">
-                                <span class="text-teal-500 font-bold">▹</span>
-                                <span>Paddle & hover test setups</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-teal-500 font-bold">▹</span>
-                                <span>Structural integrity validation</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-teal-500 font-bold">▹</span>
-                                <span>Iterative jigs, fixtures, gauges</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-teal-500 font-bold">▹</span>
-                                <span>SOP preparation for operations</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- View Full Portfolio Button -->
-            <div class="mt-16 text-center">
-                <a href="https://drive.google.com/file/d/1yAOTDPA7e8p4wWDseXVGdhd9wDjA5OuI/view?usp=drivesdk" target="_blank" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl hover:shadow-2xl transition transform hover:scale-105 font-bold">
-                    <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                    </svg>
-                    View Full EndureAir Portfolio
-                </a>
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">Tri-Blade Heli-Quad</h3>
+                <ul class="text-gray-700 space-y-3 text-sm">
+                    <li class="flex items-start gap-2">
+                        <span class="text-purple-500 font-bold">▹</span>
+                        <span>Tri-blade helicopter rotor system generating 45kg lift</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-purple-500 font-bold">▹</span>
+                        <span>Dual fuselage configurations with gear ratios up to 8:1</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-purple-500 font-bold">▹</span>
+                        <span>Power monitoring system for 22.5KW consumption</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-purple-500 font-bold">▹</span>
+                        <span>Parachute integration sustaining 6G force</span>
+                    </li>
+                </ul>
             </div>
         </div>
-    </section>
 
-    <!-- Remaining sections (Bharat Aero, College, Achievements, Footer) already complete in original -->
-    <!-- Closing tags and scripts below -->
+        <!-- Landing Gear -->
+        <div
+            class="card-hover bg-gradient-to-br from-white to-blue-50 rounded-2xl overflow-hidden shadow-xl border border-blue-100">
+            <div class="project-image h-56">
+                <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop"
+                    alt="Landing Gear" class="w-full h-full object-cover">
+            </div>
+            <div class="p-8">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="px-3 py-1 bg-blue-500 text-white rounded-full text-xs font-bold">STRUCTURAL</span>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">Landing Gear Optimization</h3>
+                <ul class="text-gray-700 space-y-3 text-sm">
+                    <li class="flex items-start gap-2">
+                        <span class="text-blue-500 font-bold">▹</span>
+                        <span>Enhanced structural strength for hard landing scenarios</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-blue-500 font-bold">▹</span>
+                        <span>Impact load analysis and validation using FEA</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-blue-500 font-bold">▹</span>
+                        <span>Weight optimization while maintaining rigidity</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-blue-500 font-bold">▹</span>
+                        <span>Multiple iterations for performance improvement</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
-    <script>
-        // Scroll Progress Indicator
-        window.addEventListener('scroll', () => {
-            const scrollTop = document.documentElement.scrollTop;
-            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrollPercent = (scrollTop / scrollHeight) * 100;
-            document.getElementById('scrollIndicator').style.width = scrollPercent + '%';
-        });
+        <!-- Rotor System -->
+        <div
+            class="card-hover bg-gradient-to-br from-white to-green-50 rounded-2xl overflow-hidden shadow-xl border border-green-100">
+            <div class="project-image h-56">
+                <img src="https://images.unsplash.com/photo-1569025690938-a00729c9e1f9?w=400&h=300&fit=crop"
+                    alt="Rotor System" class="w-full h-full object-cover">
+            </div>
+            <div class="p-8">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="px-3 py-1 bg-green-500 text-white rounded-full text-xs font-bold">CONTROL</span>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">Helicopter Rotor Control</h3>
+                <ul class="text-gray-700 space-y-3 text-sm">
+                    <li class="flex items-start gap-2">
+                        <span class="text-green-500 font-bold">▹</span>
+                        <span>Design of rotor control mechanisms</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-green-500 font-bold">▹</span>
+                        <span>Bearing selection based on loading conditions</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-green-500 font-bold">▹</span>
+                        <span>Vibration analysis and arm stiffener design</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-green-500 font-bold">▹</span>
+                        <span>Collective pitch optimization</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+        <!-- Heli-Quad 130KG -->
+        <div
+            class="card-hover bg-gradient-to-br from-white to-pink-50 rounded-2xl overflow-hidden shadow-xl border border-pink-100">
+            <div class="project-image h-56">
+                <img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=300&fit=crop"
+                    alt="Heli-Quad" class="w-full h-full object-cover">
+            </div>
+            <div class="p-8">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="px-3 py-1 bg-pink-500 text-white rounded-full text-xs font-bold">PAYLOAD</span>
+                    <span class="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-xs font-semibold">130 KG
+                        MTOW</span>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">Heli-Quad Platform</h3>
+                <ul class="text-gray-700 space-y-3 text-sm">
+                    <li class="flex items-start gap-2">
+                        <span class="text-pink-500 font-bold">▹</span>
+                        <span>50kg payload capacity vehicle design</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-pink-500 font-bold">▹</span>
+                        <span>Motor cooling equipment with effectiveness testing</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-pink-500 font-bold">▹</span>
+                        <span>Battery carriage upgrades and optimization</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-pink-500 font-bold">▹</span>
+                        <span>Transportation box design with accessories</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Tandem UAV -->
+        <div
+            class="card-hover bg-gradient-to-br from-white to-yellow-50 rounded-2xl overflow-hidden shadow-xl border border-yellow-100">
+            <div class="project-image h-56">
+                <img src="https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=400&h=300&fit=crop"
+                    alt="Tandem UAV" class="w-full h-full object-cover">
+            </div>
+            <div class="p-8">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="px-3 py-1 bg-yellow-500 text-white rounded-full text-xs font-bold">TANDEM</span>
+                    <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">56 KG
+                        MTOW</span>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">Tandem UAV System</h3>
+                <ul class="text-gray-700 space-y-3 text-sm">
+                    <li class="flex items-start gap-2">
+                        <span class="text-yellow-500 font-bold">▹</span>
+                        <span>Demo craft for multiple demonstrations</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-yellow-500 font-bold">▹</span>
+                        <span>Resonance problem resolution from vibrations</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-yellow-500 font-bold">▹</span>
+                        <span>Ground Control System (GCS) design</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-yellow-500 font-bold">▹</span>
+                        <span>380KV motor overheating solution</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Test Setups -->
+        <div
+            class="card-hover bg-gradient-to-br from-white to-teal-50 rounded-2xl overflow-hidden shadow-xl border border-teal-100">
+            <div class="project-image h-56">
+                <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=400&h=300&fit=crop"
+                    alt="Test Setup" class="w-full h-full object-cover">
+            </div>
+            <div class="p-8">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="px-3 py-1 bg-teal-500 text-white rounded-full text-xs font-bold">TESTING</span>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">Test Rigs & Jigs</h3>
+                <ul class="text-gray-700 space-y-3 text-sm">
+                    <li class="flex items-start gap-2">
+                        <span class="text-teal-500 font-bold">▹</span>
+                        <span>Paddle & hover test setups</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-teal-500 font-bold">▹</span>
+                        <span>Structural integrity validation</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-teal-500 font-bold">▹</span>
+                        <span>Iterative jigs, fixtures, gauges</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-teal-500 font-bold">▹</span>
+                        <span>SOP preparation for operations</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </div>
+
+        <!-- View Full Portfolio Button -->
+        <div class="mt-16 text-center">
+            <a href="https://drive.google.com/file/d/1yAOTDPA7e8p4wWDseXVGdhd9wDjA5OuI/view?usp=drivesdk"
+                target="_blank"
+                class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl hover:shadow-2xl transition transform hover:scale-105 font-bold">
+                <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                        d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                        clip-rule="evenodd" />
+                </svg>
+                View Full EndureAir Portfolio
+            </a>
+        </div>
+        </div>
+        </section>
+
+        <!-- Remaining sections (Bharat Aero, College, Achievements, Footer) already complete in original -->
+        <!-- Closing tags and scripts below -->
+
+        <script>
+            // Scroll Progress Indicator
+            window.addEventListener('scroll', () => {
+                const scrollTop = document.documentElement.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrollPercent = (scrollTop / scrollHeight) * 100;
+                document.getElementById('scrollIndicator').style.width = scrollPercent + '%';
+            });
+
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
                 });
             });
-        });
 
-        // Intersection Observer for animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('section-fade');
-                }
+            // Intersection Observer for animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('section-fade');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.card-hover, .achievement-badge, .stat-card').forEach(el => {
+                observer.observe(el);
             });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.card-hover, .achievement-badge, .stat-card').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
+        </script>
 </body>
 
 </html>
